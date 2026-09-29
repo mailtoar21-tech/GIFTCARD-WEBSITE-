@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Cheap Vouchers</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 420px;
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.08);
+    }
+
+    h1 { margin-top: 0; }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      border: 0;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .google { background: #fff; border: 1px solid #ddd; }
+    .user { background: #171717; color: white; }
+    .admin { background: #5b57e8; color: white; }
+
+    .switch {
+      text-align: center;
+      margin: 20px 0;
+      color: #667085;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>Welcome back</h1>
+  <p>Cheap Vouchers</p>
+
+  <button class="google" onclick="googleLogin()">
+    Continue with Google
+  </button>
+
+  <div class="switch">or</div>
+
+  <div id="userForm">
+
+    <h3>User Login</h3>
+
+    <input
+      id="email"
+      type="email"
+      placeholder="Email address"
+    >
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+    >
+
+    <button class="user" onclick="userLogin()">
+      Login as User
+    </button>
+
+    <button onclick="userSignup()">
+      Create User Account
+    </button>
+
+  </div>
+
+  <div class="switch">Admin access</div>
+
+  <button class="admin" onclick="adminLogin()">
+    Login as Admin
+  </button>
+
+  <p id="message"></p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>

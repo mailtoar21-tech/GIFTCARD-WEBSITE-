@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Admin - Cheap Vouchers</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="logo">
+    Cheap Vouchers — Admin
+  </div>
+
+  <a href="index.html">
+    View Store
+  </a>
+
+</header>
+
+
+<main class="section">
+
+
+  <!-- ADMIN LOGIN -->
+
+  <div
+    id="adminLogin"
+    class="card"
+    style="max-width:520px;margin:auto;">
+
+    <h1>Admin Login</h1>
+
+    <p>
+      This area is for authorized administration only.
+    </p>
+
+    <input
+      id="adminKey"
+      type="password"
+      placeholder="Enter admin access key"
+      style="
+        display:block;
+        width:100%;
+        padding:14px;
+        margin:14px 0;
+      ">
+
+    <button
+      class="btn"
+      onclick="loginAdmin()">
+
+      Login as Admin
+
+    </button>
+
+    <p
+      id="adminError"
+      style="color:#b42318;">
+    </p>
+
+  </div>
+
+
+  <!-- DASHBOARD -->
+
+  <div
+    id="adminDashboard"
+    style="display:none;">
+
+    <h1>
+      Admin Dashboard
+    </h1>
+
+    <p>
+      Welcome, Administrator.
+    </p>
+
+
+    <div class="grid">
+
+
+      <div class="card">
+
+        <h3>
+          🎁 Gift Cards
+        </h3>
+
+        <p>
+          Manage gift-card brands, values,
+          prices and stock.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          🛒 Orders
+        </h3>
+
+        <p>
+          Customer orders and delivery status.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          💳 Payments
+        </h3>
+
+        <p>
+          Payment settings will be connected later.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="card"
+      style="margin-top:20px;">
+
+      <h2>
+        Add Gift Card
+      </h2>
+
+      <input
+        type="text"
+        placeholder="Brand Name"
+        style="
+          display:block;
+          width:100%;
+          padding:12px;
+          margin:8px 0;
+        ">
+
+      <input
+        type="text"
+        placeholder="Gift Card Value"
+        style="
+          display:block;
+          width:100%;
+          padding:12px;
+          margin:8px 0;
+        ">
+
+      <input
+        type="text"
+        placeholder="Selling Price"
+        style="
+          display:block;
+          width:100%;
+          padding:12px;
+          margin:8px 0;
+        ">
+
+      <input
+        type="number"
+        placeholder="Available Quantity"
+        style="
+          display:block;
+          width:100%;
+          padding:12px;
+          margin:8px 0;
+        ">
+
+      <button
+        class="btn"
+        onclick="saveCard()">
+
+        Save Gift Card
+
+      </button>
+
+    </div>
+
+
+    <br>
+
+    <button
+      class="btn"
+      onclick="logoutAdmin()">
+
+      Logout
+
+    </button>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  Support:
+
+  <a href="mailto:cheapvoucherssupport12@gmail.com">
+    cheapvoucherssupport12@gmail.com
+  </a>
+
+</footer>
+
+
+<script>
+
+const ADMIN_KEY =
+  "CV-ADMIN-2026-7Q9M-X4K2";
+
+
+function loginAdmin() {
+
+  const entered =
+    document.getElementById("adminKey").value;
+
+
+  if (entered === ADMIN_KEY) {
+
+    document.getElementById(
+      "adminLogin"
+    ).style.display = "none";
+
+
+    document.getElementById(
+      "adminDashboard"
+    ).style.display = "block";
+
+  }
+
+  else {
+
+    document.getElementById(
+      "adminError"
+    ).textContent =
+      "Invalid admin access key.";
+
+  }
+
+}
+
+
+function logoutAdmin() {
+
+  document.getElementById(
+    "adminDashboard"
+  ).style.display = "none";
+
+
+  document.getElementById(
+    "adminLogin"
+  ).style.display = "block";
+
+
+  document.getElementById(
+    "adminKey"
+  ).value = "";
+
+}
+
+
+function saveCard() {
+
+  alert(
+    "Demo only. Database connection will be added next."
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
